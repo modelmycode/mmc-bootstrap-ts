@@ -1,0 +1,29 @@
+---
+to: libs/backend/<%=contextFileName %>/src/domain/<%=eventStreamFileName%>.ts
+inject: true
+after: //start <%=commandName%>
+before: //end <%=CommandName%>
+after_not_found: when
+---
+//start <%=CommandName%>
+<%if (isStartOfEventStream) {%>
+  public <%=commandName%>(<%=eventStreamIdentifier%>: string, command: <%=CommandName%>) {
+<%events[eventIndex].scenarios.map((scenario) => {-%>
+<%if(scenario.rule) {%>if (<%=scenario.rule%>)<%}-%>
+      this.apply(<%=EventName%>, { ...command, <%=eventStreamIdentifier%> });
+<%})%>
+  }<%} else {-%>
+  public <%=commandName%>(command: <%=CommandName%>) {
+  <%events[eventIndex].scenarios.map((scenario) => {-%>
+  <%if(scenario.rule) {%>if (<%=scenario.rule%>)<%}%>
+  this.apply(<%=EventName%>, { ...command });
+  <%})%>
+  }
+<%}%>
+
+  @eventSourcingHandler({ name: '<%=EventName%>' })
+  on<%=EventName%>(event: <%=EventName%>) {
+<%events[eventIndex].event.facts.map( (fact) => {%>      this.<%=h.changeCase.camel(fact.fact.name)%> = event.<%=h.changeCase.camel(fact.fact.name)%>;
+<% }) -%>
+  }
+  //end <%=CommandName%>

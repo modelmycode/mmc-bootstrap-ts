@@ -1,0 +1,13 @@
+---
+to: libs/backend/<%=contextFileName %>-query/src/<%=contextFileName%>-query.ts
+force: true
+unless_exists: true
+---
+import { Type } from "@ebd-connect/cqrs-framework";
+import {
+//queryProjectorImports
+} from './<%=contextFileName%>/<%=contextFileName%>-query-projector'
+
+export const <%=contextFileName%>QueryProjectors: Type[] = [
+//
+]
