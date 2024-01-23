@@ -30,7 +30,7 @@ const axonConnector = new AxonApplication({
       credentials: credentials.createInsecure(),
     },
     clientIdentification: new ClientIdentification()
-      .setComponentName('ebd-projector')
+      .setComponentName('mmc-projector')
       .setClientId(isProduction ? crypto.randomUUID() : 'local'),
     forceStayOnSameConnection: !isProduction,
   },
