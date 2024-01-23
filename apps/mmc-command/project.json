@@ -40,7 +40,9 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "mmc-command:build"
+        "buildTarget": "mmc-command:build",
+        "inspect": true,
+        "port": 9230
       },
       "configurations": {
         "development": {

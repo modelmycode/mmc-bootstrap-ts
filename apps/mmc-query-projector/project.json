@@ -40,7 +40,9 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "mmc-query-projector:build"
+        "buildTarget": "mmc-query-projector:build",
+        "inspect": true,
+        "port": 9233
       },
       "configurations": {
         "development": {

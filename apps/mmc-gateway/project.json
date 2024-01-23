@@ -41,7 +41,9 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "mmc-gateway:build"
+        "buildTarget": "mmc-gateway:build",
+        "inspect": true,
+        "port": 9229
       },
       "configurations": {
         "development": {
