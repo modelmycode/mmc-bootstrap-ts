@@ -20,7 +20,6 @@ const env = {
 configLogger();
 
 const axonConnector = new AxonApplication({
-  //processors
   queryHandlers: [
     //
   ],

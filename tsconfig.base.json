@@ -15,14 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@api/demo-command": ["libs/api/demo-command/src/index.ts"],
-      "@api/demo-event": ["libs/api/demo-event/src/index.ts"],
-      "@api/demo-query": ["libs/api/demo-query/src/index.ts"],
-      "@backend/demo": ["libs/backend/demo/src/index.ts"],
-      "@backend/demo-automation": ["libs/backend/demo-automation/src/index.ts"],
-      "@backend/demo-query-projector": ["libs/backend/demo-query-projector/src/index.ts"]
-
-//
     }
   },
   "exclude": ["node_modules", "tmp"]
