@@ -22,9 +22,9 @@ const env = {
 configLogger();
 
 const axonConnector = new AxonApplication({
-  //processors
+  //automation processors
+
   processors: [
-    //
   ],
   connection: {
     serviceClientInit: {
