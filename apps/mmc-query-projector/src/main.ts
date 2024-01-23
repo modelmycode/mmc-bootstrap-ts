@@ -45,7 +45,6 @@ const axonConnector = new AxonApplication({
     },
     //models
     models: [
-      //
     ],
 
   },
