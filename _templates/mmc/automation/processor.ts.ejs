@@ -8,7 +8,7 @@ import {<%automation.flowQuery.events.map((item) => {%><%=h.changeCase.pascalCas
 } from "@api/<%= contextFileName %>-event";
 
 interface <%= h.changeCase.pascalCase(automation.flowQuery.name) %> {
-<% automation.flowQuery.facts.map((fact) => { %>  <%= h.changeCase.camelCase(fact.fact.name) %>?: <%= fact.fact.factValueType.dataTypes[0].dataType.name %><% }) -%>
+<% automation.flowQuery.facts.map((fact) => { %>  <%= h.changeCase.camelCase(fact.fact.name) %>?: <%= fact.fact.factValueType.dataTypes[0].dataType.name %>,<% }) -%>
 }
 
 export class <%= h.changeCase.pascalCase(automation.name) %>
