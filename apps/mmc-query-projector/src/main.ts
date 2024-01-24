@@ -44,8 +44,9 @@ const axonConnector = new AxonApplication({
       database: env.DB_NAME,
       logging: env.DB_LOGGING,
     },
-    //models
+
     models: [
+      //dbmodels
     ],
 
   },
