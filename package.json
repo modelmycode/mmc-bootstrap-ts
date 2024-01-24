@@ -1,10 +1,10 @@
 {
-  "name": "@mmc-bootstrap-ts/source",
-  "version": "0.0.0",
+  "name": "@ebd-connect/mmc-bootstrap-ts",
+  "version": "0.0.2",
   "license": "MIT",
+  "author": "Arjan Noordhoek",
   "scripts": {},
-  "private": true,
-  "dependencies": {
+   "dependencies": {
     "@ebd-connect/cqrs-framework": "^0.0.1",
     "axios": "^1.0.0",
     "cors": "^2.8.5",
