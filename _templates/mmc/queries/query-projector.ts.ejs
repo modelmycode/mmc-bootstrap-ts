@@ -12,7 +12,7 @@ export class <%=QueryName%>QueryProjector {
 <% queries[queryIndex].events.map((item) => {-%>
     @eventHandler({name:'<%=h.changeCase.pascal(item.flowEvent.event.name)%>'})
     async on<%=h.changeCase.pascal(item.flowEvent.event.name)%>({<%=identifierName%>: id,...data}: <%=h.changeCase.pascal(item.flowEvent.event.name)%>) {
-      await <%=queryName%>QueryDb.create(id, {<%=identifierName%>: id,})
+      await <%=queryName%>QueryDb.create(id, {<%=identifierName%>: id,...data})
     }
 <%})-%>
 }
