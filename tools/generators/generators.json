@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "event": {
+      "factory": "./generator",
+      "schema": "./schema.json",
+      "description": "tools/generators/event generator"
+    }
+  }
+}

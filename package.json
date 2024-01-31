@@ -11,7 +11,7 @@
     "g:processor": "nx workspace-generator processor-generator"
   },
   "dependencies": {
-    "@ebd-connect/cqrs-framework": "^0.0.1",
+    "@ebd-connect/cqrs-framework": "^0.0.3",
     "@swc/helpers": "~0.5.2",
     "axios": "^1.0.0",
     "cors": "^2.8.5",

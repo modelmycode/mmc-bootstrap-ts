@@ -16,14 +16,7 @@ const port = process.env.PORT ? Number(process.env.PORT) : 3100;
 const AXON_HOST = process.env.AXON_HOST ?? 'localhost:8124';
 //axon connector
 configLogger();
-// isProduction && {
-//   service: {
-//     name: pkg.name,
-//     type: 'expressjs',
-//     version: pkg.version,
-//     build: '1', //buildMeta.build,
-//   },
-//}
+
 const axonConnector = new AxonApplication({
   connection: {
     serviceClientInit: {

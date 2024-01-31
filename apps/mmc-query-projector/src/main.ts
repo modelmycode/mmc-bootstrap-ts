@@ -1,4 +1,3 @@
-
 import {
   AxonApplication,
   configLogger,

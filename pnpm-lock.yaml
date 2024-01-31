@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@ebd-connect/cqrs-framework':
-    specifier: ^0.0.1
-    version: 0.0.1(@types/node@18.16.9)
+    specifier: ^0.0.3
+    version: 0.0.3(@types/node@18.16.9)
   '@swc/helpers':
     specifier: ~0.5.2
     version: 0.5.3
@@ -1408,8 +1408,8 @@ packages:
       kuler: 2.0.0
     dev: false
 
-  /@ebd-connect/cqrs-framework@0.0.1(@types/node@18.16.9):
-    resolution: {integrity: sha512-iF5grQT7kn5RN0TaC06pL0axkEpfyw+2ePaWtDK2d5Le1Yp8UrQkSMtXM/tvbA3c4rmK0EBQd87vWes9j0ZZYQ==}
+  /@ebd-connect/cqrs-framework@0.0.3(@types/node@18.16.9):
+    resolution: {integrity: sha512-KiHLknj9brplMEI7TYlHjuJ6AagMyD9gmxBnv+7txpaLwRdx6AkYI1ED6NmT5yMt69JGu677qNNGVWZ6P383gQ==}
     dependencies:
       '@elastic/ecs-winston-format': 1.5.2
       '@grpc/grpc-js': 1.9.13
@@ -5815,7 +5815,7 @@ packages:
       '@colors/colors': 1.6.0
       '@types/triple-beam': 1.3.5
       fecha: 4.2.3
-      ms: 2.1.2
+      ms: 2.1.3
       safe-stable-stringify: 2.4.3
       triple-beam: 1.4.1
     dev: false

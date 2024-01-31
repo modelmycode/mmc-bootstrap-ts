@@ -21,6 +21,7 @@ configLogger();
 
 const axonConnector = new AxonApplication({
   queryHandlers: [
+    //
   ],
   connection: {
     serviceClientInit: {
