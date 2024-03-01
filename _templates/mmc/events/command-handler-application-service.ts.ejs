@@ -11,13 +11,13 @@ after_not_found: //commandHandlers
 <%if (!events[eventIndex].event.facts.find((item) => item.fact.name===eventStreamIdentifier)) {-%>
     const <%=eventStreamIdentifier%>= command?.<%=eventStreamIdentifier%> ? command?.<%=eventStreamIdentifier%> : crypto.randomUUID();
 <%} else {%>    const <%=eventStreamIdentifier%>= uuid()<%}%>
-    await eventSourcing.create(<%=EventStreamName%>, <%=eventStreamIdentifier%>, (eventStream) => eventStream.<%=commandName%>(<%=eventStreamIdentifier%>, command)
+    await eventSourcing.create(<%=EventStreamName%>, <%=eventStreamIdentifier%>, (eventStream) => eventStream.<%=commandName%>(<%=eventStreamIdentifier%>, command<%if (serviceName) { -%>,<%=serviceName%>.<%=serviceMethodName%><%} -%>)
   );
   return { <%=eventStreamIdentifier%> };
   }<%} else {-%>
   async <%=commandName%>(command: <%=CommandName%>, { eventSourcing }: CommandContext) {
     await eventSourcing.load(<%=EventStreamName%>, command.<%=eventStreamIdentifier%>, (eventStream) =>
-      eventStream.<%=commandName%>(command)
+      eventStream.<%=commandName%>(command <%if (serviceName) { -%>,<%=serviceName%>.<%=serviceMethodName%><%} -%>)
     );
   }
 <%}%>

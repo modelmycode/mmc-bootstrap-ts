@@ -8,6 +8,6 @@ import { command, <%if (isStartOfEventStream) {%>Responding<%}%>Command } from '
 export class <%=CommandName%> implements <%if (isStartOfEventStream) {%>Responding<%}%>Command {
   constructor(
 <% command.facts.map( (item) => {%>    public readonly <%=h.changeCase.camel(item.fact.name)%> : <%=item.fact.factValueType.dataTypes[0].dataType.name%>,
-<% }) -%>  ) {}
+<% }) -%> {}
 <%if (isStartOfEventStream) {%>  $responseType!: { <%=eventStreamIdentifier%> : <%=eventStreamIdentifierType%> }<%}%>
 }

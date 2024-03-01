@@ -7,16 +7,18 @@ after_not_found: when
 ---
 //start <%=CommandName%>
 <%if (isStartOfEventStream) {%>
-  public <%=commandName%>(<%=eventStreamIdentifier%>: string, command: <%=CommandName%>) {
+  public <%=commandName%>(<%=eventStreamIdentifier%>: string, command: <%=CommandName%><%if (serviceName) {-%>, <%= serviceParameterType%><%}%> ) {
 <%events[eventIndex].scenarios.map((scenario) => {-%>
+<%if (serviceName) {-%>const <%=serviceResultName%> = <%=serviceCallingCode%><%}%>
 <%if(scenario.rule) {%>if (<%=scenario.rule%>)<%}-%>
-      this.apply(<%=EventName%>, { ...command, <%=eventStreamIdentifier%> });
+      this.apply(<%=EventName%>, { ...command, <%=eventStreamIdentifier%> <%if (serviceName) {-%>, <%=serviceResultName%><%}%> });
 <%})%>
   }<%} else {-%>
-  public <%=commandName%>(command: <%=CommandName%>) {
+  public <%=commandName%>(command: <%=CommandName%><%if (serviceName) {-%>, <%= serviceParameterType%><%}%>) {
   <%events[eventIndex].scenarios.map((scenario) => {-%>
+<%if (serviceName) {-%>const <%=serviceResultName%> = <%=serviceCallingCode%><%}%>
   <%if(scenario.rule) {%>if (<%=scenario.rule%>)<%}%>
-  this.apply(<%=EventName%>, { ...command });
+  this.apply(<%=EventName%>, { ...command <%if (serviceName) {-%>, <%=serviceResultName%><%}%> });
   <%})%>
   }
 <%}%>
