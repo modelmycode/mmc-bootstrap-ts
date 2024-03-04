@@ -1,8 +1,8 @@
 ---
 inject: true
 to: tsconfig.base.json
-after: paths
-skip_if: api/<%=contextFileName%>
+after: api/legacy
+skip_if: -command
 ---
       "@api/<%=contextFileName%>-command": ["libs/api/<%=contextFileName%>-command/src/index.ts"],
       "@api/<%=contextFileName%>-event": ["libs/api/<%=contextFileName%>-event/src/index.ts"],
