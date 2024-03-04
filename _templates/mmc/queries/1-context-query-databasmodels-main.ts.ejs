@@ -1,0 +1,7 @@
+---
+inject: true
+to: apps/mmc-automation/src/main.ts
+after:       //dbmodels
+skip_if: <%=contextName%>DbModels, //dbmodels
+---
+    ...<%=contextName%>DatabaseModels, //dbmodels
