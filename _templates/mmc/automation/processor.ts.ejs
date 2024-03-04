@@ -4,6 +4,8 @@ force: true
 ---
 import { Processor, automationFactory, eventHandler,messageBus,} from "@ebd-connect/cqrs-framework"
 import {<%=CommandName %>,} from "@api/<%= contextFileName %>-command";
+import {<%command.ruleList.events.map((item) => {%><%=h.changeCase.pascalCase(item.event.name)%>,<%})-%>
+} from "@api/<%= contextFileName %>-event";
 import {<%automation.flowQuery.events.map((item) => {%><%=h.changeCase.pascalCase(item.flowEvent.event.name)%>,<%})-%>
 } from "@api/<%= contextFileName %>-event";
 
