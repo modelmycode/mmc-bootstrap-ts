@@ -27,14 +27,14 @@ implements Processor<<%= h.changeCase.pascalCase(automation.flowQuery.name) %>>
 
   @eventHandler({name: '<%=h.changeCase.pascalCase(automation.flowQuery.events[0].flowEvent.event.name)%>'})
   async on<%=h.changeCase.pascalCase(automation.flowQuery.events[0].flowEvent.event.name)%>(event: <%=h.changeCase.pascalCase(automation.flowQuery.events[0].flowEvent.event.name)%>) {
-    await this.automation.add(event.<%=h.changeCase.camelCase(automation.flowQuery.events[0].flowEvent.event.facts[0].fact.name)%>, {
+    await this.automation.add(event.<%=h.changeCase.camelCase(eventStreamIdentifier)%>, {
       <%automation.flowQuery.events[0].flowEvent.event.facts.map((item) => {if(automation.flowQuery.facts.find((modelFact) => modelFact.fact.name === item.fact.name)) { %> <%=h.changeCase.camelCase(item.fact.name)%>: event.<%=h.changeCase.camelCase(item.fact.name)%>, <%}})%>
     })
   }
   <%if(automation.flowQuery.events.length>1) {-%><%for(let i=1; i<(automation.flowQuery.events.length);i++) { if (events.findIndex((item) => automation.flowQuery.events[i].flowEvent.event.name===item.event.name) === -1)   {-%>
   @eventHandler({name: '<%=h.changeCase.pascalCase(automation.flowQuery.events[i].flowEvent.event.name)%>'})
   async on<%=h.changeCase.pascalCase(automation.flowQuery.events[i].flowEvent.event.name)%>(event: <%=h.changeCase.pascalCase(automation.flowQuery.events[i].flowEvent.event.name)%>) {
-    await this.automation.update(event.<%=h.changeCase.camelCase(automation.flowQuery.events[i].flowEvent.event.facts[0].fact.name)%>, {
+    await this.automation.update(event.<%=eventStreamIdentifier%>, {
       <%automation.flowQuery.events[i].flowEvent.event.facts.map((item) => {if(automation.flowQuery.facts.find((modelFact) => modelFact.fact.name === item.fact.name)) { %> <%=h.changeCase.camelCase(item.fact.name)%>: event.<%=h.changeCase.camelCase(item.fact.name)%>, <%}})%>
     })
   }
@@ -42,7 +42,7 @@ implements Processor<<%= h.changeCase.pascalCase(automation.flowQuery.name) %>>
 
   <%events.map((item) => {-%>@eventHandler({name: '<%=h.changeCase.pascalCase(item.event.name)%>'})
   async on<%=h.changeCase.pascalCase(item.event.name)%>(event: <%=h.changeCase.pascalCase(item.event.name)%>) {
-    await this.automation.onComplete(event.<%=h.changeCase.camelCase(automation.flowQuery.events[automation.flowQuery.events.length-1].flowEvent.event.facts[0].fact.name)%>)
+    await this.automation.onComplete(event.<%=eventStreamIdentifier%>)
   }
   <%})%>
 }
