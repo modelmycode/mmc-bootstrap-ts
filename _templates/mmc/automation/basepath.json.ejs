@@ -1,7 +1,7 @@
 ---
 inject: true
 to: tsconfig.base.json
-after: -core"
-skip_if: -automation
+after: paths
+skip_if: backend/<%=contextFileName%>-automation
 ---
       "@backend/<%=contextFileName%>-automation": ["libs/backend/<%=contextFileName%>-automation/src/index.ts"],

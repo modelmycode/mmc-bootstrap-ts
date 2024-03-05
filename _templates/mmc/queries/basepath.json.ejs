@@ -1,7 +1,7 @@
 ---
 inject: true
 to: tsconfig.base.json
-after: <%=contextFileName%>-core"
+after: paths
 skip_if: api/<%=contextFileName%>-query
 ---
       "@api/<%=contextFileName%>-query": ["libs/api/<%=contextFileName%>-query/src/index.ts"],
