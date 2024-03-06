@@ -1,7 +1,7 @@
 ---
 inject: true
 to: libs/backend/<%=contextFileName %>-core/src/application/<%=eventStreamFileName%>-application-service.ts
-after: <%=CommandName%>
+after_marker: <%=CommandName%>
 before: //end <%=CommandName%>
 after_not_found: //commandHandlers
 ---
