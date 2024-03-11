@@ -5,4 +5,4 @@ prepend: true
 skip_if: <%=CommandName%> } from
 ---
 import { <%=CommandName%> } from '@api/<%=contextFileName %>-command';
-<%if(serviceName) {%>import { <%=serviceName%> } from '@ebd-connect/infrastructure';<%}%>
+<%if(serviceName) {%>import { <%=serviceName%> } from '@backend/infrastructure';<%}%>

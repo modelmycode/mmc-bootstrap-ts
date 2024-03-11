@@ -11,9 +11,6 @@ dependencies:
   '@swc/helpers':
     specifier: ~0.5.2
     version: 0.5.3
-  axios:
-    specifier: 1.6.0
-    version: 1.6.0
   cors:
     specifier: ^2.8.5
     version: 2.8.5
@@ -3372,6 +3369,7 @@ packages:
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
+    dev: true
 
   /axon-server-node-api@4.4.0(@grpc/grpc-js@1.9.13)(@types/node@18.16.9):
     resolution: {integrity: sha512-9BqThiTREe3Mfixd0Yrq5tW5fOzbk7pKygoFz6+YxpHcYwnfTjOTJOSxWNrKwCJnZc2nd7uufqcC0VagraAWSg==}
@@ -6542,6 +6540,7 @@ packages:
 
   /proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+    dev: true
 
   /pseudomap@1.0.2:
     resolution: {integrity: sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==}

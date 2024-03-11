@@ -18,7 +18,7 @@
       "@api/legacy": ["libs/api/legacy/src/index.ts"],
       "@backend/legacy": ["libs/backend/legacy/src/index.ts"],
       "@backend/vendors": ["libs/backend/vendors/src/index.ts"],
-      "@ebd-connect/infrastructure": [
+      "@backend/infrastructure": [
         "libs/backend/infrastructure/src/index.ts"
       ]
     }
