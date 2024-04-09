@@ -24,5 +24,5 @@ const axonConnector = new AxonApplication({
     forceStayOnSameConnection: !isProduction,
   },
 });
-axonConnector.connect();
+axonConnector.connect().catch((error) => console.error(error.message));
 

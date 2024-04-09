@@ -1,38 +1,35 @@
-
 import {
-  AxonApplication,
-  configLogger,
-  ClientIdentification,
+  ClientIdentification, configLogger,
   credentials,
+  logger,
+  QueryRebuildingApp,
+  readBuildMeta
 } from '@ebd-connect/cqrs-framework';
-
-const isProduction = false;
+import { environment } from './environments/environment';
+readBuildMeta();
+const isProduction = environment.production
+const appLogger = logger.forContext('App')
+configLogger();
 const env = {
-  PORT: 3104,
-  HOST: 'localhost',
+  PORT: 3105,
   AXON_HOST: 'localhost:8124',
 
   DB_HOST: 'localhost',
   DB_PORT: 5432,
-  DB_USER: 'postgres',
-  DB_PASSWORD: 'postgrespassword',
-  DB_NAME: 'postgres',
+  DB_USER: 'admin',
+  DB_PASSWORD: 'secret',
+  DB_NAME: 'mmc',
   DB_LOGGING: false,
-};
+}
 
-configLogger();
-
-const axonConnector = new AxonApplication({
-  processors: [
-    //automation processors
-  ],
+const axonApp = new QueryRebuildingApp({
   connection: {
     serviceClientInit: {
       address: env.AXON_HOST,
       credentials: credentials.createInsecure(),
     },
     clientIdentification: new ClientIdentification()
-      .setComponentName('mmc-automation')
+      .setComponentName('query-rebuilding')
       .setClientId(isProduction ? crypto.randomUUID() : 'local'),
     forceStayOnSameConnection: !isProduction,
   },
@@ -46,7 +43,6 @@ const axonConnector = new AxonApplication({
       logging: env.DB_LOGGING,
     },
   },
-  eventProcessor: { queueHandlers: true },
-});
-axonConnector.connect().catch((error) => console.error(error.message));
-
+  rebuildGroups: [],
+})
+axonApp.connect().catch((error) => appLogger.error(error, true))

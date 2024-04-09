@@ -15,12 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@api/legacy": ["libs/api/legacy/src/index.ts"],
-      "@backend/legacy": ["libs/backend/legacy/src/index.ts"],
-      "@backend/vendors": ["libs/backend/vendors/src/index.ts"],
-      "@backend/infrastructure": [
-        "libs/backend/infrastructure/src/index.ts"
-      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

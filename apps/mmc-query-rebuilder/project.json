@@ -1,0 +1,63 @@
+{
+  "name": "mmc-query-rebuilder",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/mmc-query-rebuilder/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/mmc-query-rebuilder",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/mmc-query-rebuilder/src/main.ts",
+        "tsConfig": "apps/mmc-query-rebuilder/tsconfig.app.json",
+        "assets": ["apps/mmc-query-rebuilder/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "mmc-query-rebuilder:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "mmc-query-rebuilder:build:development"
+        },
+        "production": {
+          "buildTarget": "mmc-query-rebuilder:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/mmc-query-rebuilder/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@ebd-connect/cqrs-framework':
-    specifier: ^0.0.3
-    version: 0.0.3(@types/node@18.16.9)
+    specifier: ^0.0.4
+    version: 0.0.4(@types/node@18.16.9)
   '@swc/helpers':
     specifier: ~0.5.2
     version: 0.5.3
@@ -1405,8 +1405,8 @@ packages:
       kuler: 2.0.0
     dev: false
 
-  /@ebd-connect/cqrs-framework@0.0.3(@types/node@18.16.9):
-    resolution: {integrity: sha512-KiHLknj9brplMEI7TYlHjuJ6AagMyD9gmxBnv+7txpaLwRdx6AkYI1ED6NmT5yMt69JGu677qNNGVWZ6P383gQ==}
+  /@ebd-connect/cqrs-framework@0.0.4(@types/node@18.16.9):
+    resolution: {integrity: sha512-PUNd68ziN8p2Bz70bo/8G/jCIeCjvTJ1K97IxEw1VReqJAyo7Irs73tiq+Vnlf6PAwAF9n7P3YxZMxNhAnsCdg==}
     dependencies:
       '@elastic/ecs-winston-format': 1.5.2
       '@grpc/grpc-js': 1.9.13

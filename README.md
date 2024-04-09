@@ -30,3 +30,5 @@ This service subscribes to events and build the projections for each of the quer
 , but it is easy to add support for other databases as long as they support jsonb.
 
 To start the queryProjector service run `nx serve ebd-query-projector`. This service only talks to Axon Server
+
+more information in docs/getting-started.html

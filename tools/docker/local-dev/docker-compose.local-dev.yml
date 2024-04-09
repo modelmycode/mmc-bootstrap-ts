@@ -11,7 +11,7 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: secret
   axonserver:
-    image: axoniq/axonserver:latest
+    image: axoniq/axonserver:2024.0.0
     restart: always
     hostname: axonserver
     volumes:
