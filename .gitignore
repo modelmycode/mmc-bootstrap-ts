@@ -39,3 +39,8 @@ testem.log
 Thumbs.db
 
 .nx/cache
+/tools/docker/local-dev/.volumes/events/default/00000000000000000000.events
+/tools/docker/local-dev/.volumes/events/default/00000000000000000000.snapshots
+/tools/docker/local-dev/.volumes/data/AxonIQ.pid
+/tools/docker/local-dev/.volumes/data/axonserver-controldb.mv.db
+/tools/docker/local-dev/.volumes/data/plugins/cache/bundle0/last.java.version
