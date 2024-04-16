@@ -1,3 +1,5 @@
+import { fACommandHandlers } from '@backend/f-a-core';
+
 import {
   AxonApplication,
   ClientIdentification,
@@ -12,6 +14,8 @@ configLogger();
 const axonConnector = new AxonApplication({
   commandHandlers: [
     // contextCommandHandlers
+    ...fACommandHandlers,
+
   ],
   connection: {
     serviceClientInit: {

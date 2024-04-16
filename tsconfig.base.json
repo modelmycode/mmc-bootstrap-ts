@@ -15,6 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@api/f-a-command": ["libs/api/f-a-command/src/index.ts"],
+      "@api/f-a-event": ["libs/api/f-a-event/src/index.ts"],
+      "@backend/f-a-core": ["libs/backend/f-a-core/src/index.ts"],
+
     }
   },
   "exclude": ["node_modules", "tmp"]

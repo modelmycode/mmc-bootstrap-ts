@@ -1,9 +1,9 @@
 ---
-to: libs/backend/<%=contextFileName%>-query/src/<%=contextFileName%>/<%=contextFileName%>-query-projector.ts
+to: libs/backend/<%=contextFileName%>-query/src/<%=contextFileName%>/<%=queryFileName%>-query-projector.ts
 force: true
 ---
 import { eventHandler } from '@ebd-connect/cqrs-framework'
-import {   <%=queryName%>QueryDb,} from './<%=contextFileName%>-query-db'
+import {   <%=queryName%>QueryDb,} from './<%=queryFileName%>-query-db'
 <% queries[queryIndex].events.map((item) => {-%>
 import {   <%=h.changeCase.pascal(item.flowEvent.event.name)%>,} from '@api/<%=h.changeCase.param(item.flowEvent.event.context.name)%>-event'
 <%})-%>

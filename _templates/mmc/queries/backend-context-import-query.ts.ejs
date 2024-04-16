@@ -1,7 +1,7 @@
 ---
 inject: true
-to: libs/backend/<%=contextFileName %>-query/src/<%=contextFileName%>-query.ts
-after: dbModelsImports
-skip_if: <%=queryName%>
+to: libs/backend/<%=contextFileName %>-query/src/<%=contextFileName%>/<%=queryFileName%>-query.ts
+after: dbModelsDefs
+skip_if: <%=queryName%>QueryDb //dbModelDef
 ---
-    <%=queryName%>QueryDb,
+    <%=queryName%>QueryDb //dbModelDef,

@@ -1,10 +1,10 @@
 ---
-to: libs/backend/<%=contextFileName%>-query/src/<%=contextFileName%>/<%=contextFileName%>-query-handlers.ts
+to: libs/backend/<%=contextFileName%>-query/src/<%=contextFileName%>/<%=queryFileName%>-query-handlers.ts
 force: true
 ---
 import { QueryReturnType, queryHandler } from '@ebd-connect/cqrs-framework'
 import {   <%=QueryName%>,} from '@api/<%=contextFileName%>-query'
-import {   <%=queryName%>QueryDb,} from './<%=contextFileName%>-query-db'
+import {   <%=queryName%>QueryDb,} from './<%=queryFileName%>-query-db'
 
 export class <%=ContextName%>QueryHandlers {
 

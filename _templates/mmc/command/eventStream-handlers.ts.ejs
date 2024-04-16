@@ -7,7 +7,7 @@ after_not_found: when
 ---
   //start <%=CommandName%>
   public <%=commandName%>(<% if (isStartOfEventStream) {%><%=eventStreamIdentifier%>: string,<%}%> command: <%=CommandName%><%if (serviceName) {-%>, <%= serviceParameterType%><%}%> ) {
-<%if (serviceName) {-%>    const <%=serviceResultName%> = <%=serviceCallingCode%><%}%><%command.ruleList.events.map((event) => {-%>
+<%if (serviceName) {-%>    const <%=serviceResultName%> = <%=serviceCallingCode%><%}%><%command.ruleList[0].events.map((event) => {-%>
 <%if(event.rules[0].rule) {%>
     if (<%=event.rules[0].rule%>) {<%}%>
       this.apply(<%= h.changeCase.pascalCase(event.event.name)%>, { ...command <%if (serviceName) {-%>, <%=event.rules[0].rule.substring(event.rules[0].rule.indexOf('.')+1)%>: <%=event.rules[0].rule%><%}%><% if (isStartOfEventStream) {%>,<%=eventStreamIdentifier%><%}%> });

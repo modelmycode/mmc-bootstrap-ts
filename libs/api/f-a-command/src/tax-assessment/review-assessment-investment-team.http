@@ -1,0 +1,15 @@
+### ReviewAssessmentInvestmentTeam Command
+POST http://localhost:3100/
+Content-Type: application/json
+
+{
+"command": "ReviewAssessmentInvestmentTeam",
+  "payload": {
+     "taxAssessmentId" : "",
+     "failReason" : "",
+     "reviewerEmail" : ""
+  }
+}
+
+
+
